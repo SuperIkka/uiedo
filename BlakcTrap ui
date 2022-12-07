@@ -87,21 +87,6 @@ function Blacklib:Window()
     WindowStroke.Enabled = true
     WindowStroke.Archivable = true
     
-    PlayTime.Name = "PlayTime"
-    PlayTime.Parent = WindowFrame
-    PlayTime.BackgroundColor3 = Color3.fromRGB(12,12,12)
-    PlayTime.BackgroundTransparency = 1.000
-    PlayTime.Position = UDim2.new(0, 3, 0, 324)
-    PlayTime.Size = UDim2.new(0, 150, 0, 25)
-    PlayTime.Font = Enum.Font.Code
-    PlayTime.Text = ""
-    PlayTime.TextSize = 13.000
-    PlayTime.TextColor3 = Color3.fromRGB(180,180,180)
-    PlayTime.TextXAlignment = Enum.TextXAlignment.Center
-    
-    PlayTimeCorner.Name = "PlayTimeCorner"
-    PlayTimeCorner.Parent = PlayTime
-    PlayTimeCorner.CornerRadius = UDim.new(0, 2)
     
     BlackImage.Name = "BlackImage"
     BlackImage.Parent = WindowFrame
@@ -124,51 +109,6 @@ function Blacklib:Window()
     BlackTitle.TextSize = 13.000
     BlackTitle.TextXAlignment = Enum.TextXAlignment.Left
     
-    Space.Name = "Space"
-    Space.Parent = WindowFrame
-    Space.BackgroundColor3 = _G.WindowBackgroundColor
-    Space.BackgroundTransparency = 1.000
-    Space.Position = UDim2.new(0, 98, 0, 3)
-    Space.Size = UDim2.new(0, 10, 0, 25)
-    Space.Font = Enum.Font.GothamBold
-    Space.Text = "|"
-    Space.TextColor3 = Color3.fromRGB(0,150,0)
-    Space.TextSize = 18.000
-    
-    ServerTime.Name = "ServerTime"
-    ServerTime.Parent = WindowFrame
-    ServerTime.BackgroundColor3 = _G.WindowBackgroundColor
-    ServerTime.BackgroundTransparency = 1.000
-    ServerTime.Position = UDim2.new(0, 115, 0, 3)
-    ServerTime.Size = UDim2.new(0, 225, 0, 25)
-    ServerTime.Font = Enum.Font.Code
-    ServerTime.Text = ""
-    ServerTime.TextSize = 13.000
-    ServerTime.TextColor3 = Color3.fromRGB(180,180,180)
-    ServerTime.TextXAlignment = Enum.TextXAlignment.Left
-    
-    Space2.Name = "Space2"
-    Space2.Parent = WindowFrame
-    Space2.BackgroundColor3 = _G.WindowBackgroundColor
-    Space2.BackgroundTransparency = 1.000
-    Space2.Position = UDim2.new(0, 276, 0, 3)
-    Space2.Size = UDim2.new(0, 10, 0, 25)
-    Space2.Font = Enum.Font.GothamBold
-    Space2.Text = "|"
-    Space2.TextColor3 = Color3.fromRGB(0,150,0)
-    Space2.TextSize = 18.000
-    
-    Pinged.Name = "Pinged"
-    Pinged.Parent = WindowFrame
-    Pinged.BackgroundColor3 = _G.WindowBackgroundColor
-    Pinged.BackgroundTransparency = 1.000
-    Pinged.Position = UDim2.new(0, 295, 0, 3)
-    Pinged.Size = UDim2.new(0, 225, 0, 25)
-    Pinged.Font = Enum.Font.Code
-    Pinged.Text = ""
-    Pinged.TextSize = 13.000
-    Pinged.TextColor3 = Color3.fromRGB(180,180,180)
-    Pinged.TextXAlignment = Enum.TextXAlignment.Left
     
     CloseButton.Name = "CloseButton"
     CloseButton.Parent = WindowFrame
@@ -300,17 +240,8 @@ function Blacklib:Window()
         closetog = not closetog
     end)
     
-    function osfunc:Refresh(textadd)
-        ServerTime.Text = textadd
-    end
     function titlefunc:Refresh(text)
         BlackTitle.Text = text
-    end
-    function pingfunc:Refresh(newtext)
-        Pinged.Text = newtext
-    end
-    function timefunc:Refresh(newtime)
-        PlayTime.Text = newtime
     end
     
     local function UpdateTime()
@@ -1881,4 +1812,3 @@ function Blacklib:Window()
     return Tabs
 end
 return Blacklib
-
