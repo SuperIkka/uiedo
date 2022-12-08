@@ -64,7 +64,7 @@ function Blacklib:Window()
     WindowFrame.BackgroundColor3 = _G.WindowBackgroundColor
     WindowFrame.Position = UDim2.new(0, 220, 0, 30)
     WindowFrame.BorderSizePixel = 0
-    WindowFrame.Size = UDim2.new(0, 550, 0, 0)
+    WindowFrame.Size = UDim2.new(0, 656, 0, 400)
     WindowFrame.ClipsDescendants = true
     
     WindowFrame:TweenSize(UDim2.new(0, 550, 0, 350), Enum.EasingDirection.InOut, Enum.EasingStyle.Linear, .6, true)
