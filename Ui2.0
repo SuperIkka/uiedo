@@ -15,19 +15,19 @@ local Mouse = LocalPlayer:GetMouse()
 local NameID = LocalPlayer.Name
 
 
-_G.WindowBackgroundColor = Color3.fromRGB(51,61,69)
-_G.BackgroundItemColor = Color3.fromRGB(51, 61, 69)
-_G.TabWindowColor = Color3.fromRGB(23, 27, 54)
-_G.ContainerColor = Color3.fromRGB(23, 27, 54)
-_G.TitleTextColor = Color3.fromRGB(255, 255, 255)
-_G.ImageColor = Color3.fromRGB(255, 255, 255)
-_G.LineThemeColor = Color3.fromRGB(0, 0, 0)
-_G.TabTextColor = Color3.fromRGB(255, 255, 255)
-_G.TabImageColor = Color3.fromRGB(54, 58, 64)
-_G.TabThemeColor = Color3.fromRGB(51, 61, 69)
-_G.SectionColor = Color3.fromRGB(0, 0, 0)
-_G.SectionImageColor = Color3.fromRGB(54, 68, 64)
-_G.SectionTextColor = Color3.fromRGB(255, 255, 255)
+_G.WindowBackgroundColor = Color3.fromRGB(12,12,12)
+_G.BackgroundItemColor = Color3.fromRGB(20, 20, 20)
+_G.TabWindowColor = Color3.fromRGB(30, 30, 30)
+_G.ContainerColor = Color3.fromRGB(30, 30, 30)
+_G.TitleTextColor = Color3.fromRGB(150, 150, 150)
+_G.ImageColor = Color3.fromRGB(150, 150, 150)
+_G.LineThemeColor = Color3.fromRGB(150, 150, 150)
+_G.TabTextColor = Color3.fromRGB(150, 150, 150)
+_G.TabImageColor = Color3.fromRGB(150, 150, 150)
+_G.TabThemeColor = Color3.fromRGB(250, 0, 0)
+_G.SectionColor = Color3.fromRGB(150, 150, 150)
+_G.SectionImageColor = Color3.fromRGB(150, 150, 150)
+_G.SectionTextColor = Color3.fromRGB(150, 150, 150)
 _G.SectionOn = Color3.fromRGB(0, 250, 0)
 
 
@@ -38,8 +38,6 @@ function Blacklib:Window()
     local timefunc = {}
     local Points = Instance.new("Frame")
     local BlackTrap = Instance.new("ScreenGui")
-    local PlayTime = Instance.new("TextLabel")
-    local PlayTimeCorner = Instance.new("UICorner")
     local WindowFrame = Instance.new("Frame")
     local WindowCorner = Instance.new("UICorner")
     local WindowStroke = Instance.new("UIStroke")
@@ -47,8 +45,6 @@ function Blacklib:Window()
     local Space = Instance.new("TextLabel")
     local Space2 = Instance.new("TextLabel")
     local BlackTitle = Instance.new("TextLabel")
-    local ServerTime = Instance.new("TextLabel")
-    local Pinged = Instance.new("TextLabel")
     local CloseButton = Instance.new("TextButton")
     
     -- Propertiers --
@@ -60,7 +56,7 @@ function Blacklib:Window()
     Points.Parent = BlackTrap
     Points.BackgroundColor3 = _G.WindowBackgroundColor
     Points.BackgroundTransparency = 1.000
-    Points.Size = UDim2.new(0, 800, 0, 600)
+    Points.Size = UDim2.new(0, 656, 0, 400)
     Points.Position = UDim2.new(0, 0, 0, 0)
     
     WindowFrame.Name = "WindowFrame"
@@ -87,21 +83,7 @@ function Blacklib:Window()
     WindowStroke.Enabled = true
     WindowStroke.Archivable = true
     
-    PlayTime.Name = "PlayTime"
-    PlayTime.Parent = WindowFrame
-    PlayTime.BackgroundColor3 = Color3.fromRGB(12,12,12)
-    PlayTime.BackgroundTransparency = 1.000
-    PlayTime.Position = UDim2.new(0, 3, 0, 324)
-    PlayTime.Size = UDim2.new(0, 150, 0, 25)
-    PlayTime.Font = Enum.Font.Code
-    PlayTime.Text = ""
-    PlayTime.TextSize = 13.000
-    PlayTime.TextColor3 = Color3.fromRGB(180,180,180)
-    PlayTime.TextXAlignment = Enum.TextXAlignment.Center
     
-    PlayTimeCorner.Name = "PlayTimeCorner"
-    PlayTimeCorner.Parent = PlayTime
-    PlayTimeCorner.CornerRadius = UDim.new(0, 2)
     
     BlackImage.Name = "BlackImage"
     BlackImage.Parent = WindowFrame
@@ -109,7 +91,7 @@ function Blacklib:Window()
     BlackImage.BackgroundTransparency = 1.000
     BlackImage.Position = UDim2.new(0, 3, 0, 3)
     BlackImage.Size = UDim2.new(0, 25, 0, 25)
-    BlackImage.Image = ""
+    BlackImage.Image = "rbxassetid://8666601749"
     BlackImage.ImageColor3 = Color3.fromRGB(0,220,0)
     
     BlackTitle.Name = "BlackTitle"
@@ -119,56 +101,11 @@ function Blacklib:Window()
     BlackTitle.Position = UDim2.new(0, 33, 0, 3)
     BlackTitle.Size = UDim2.new(0, 50, 0, 25)
     BlackTitle.Font = Enum.Font.GothamBold
-    BlackTitle.Text = ""
+    BlackTitle.Text = "THX"
     BlackTitle.TextColor3 = Color3.fromRGB(180,180,180)
     BlackTitle.TextSize = 13.000
     BlackTitle.TextXAlignment = Enum.TextXAlignment.Left
     
-    Space.Name = "Space"
-    Space.Parent = WindowFrame
-    Space.BackgroundColor3 = _G.WindowBackgroundColor
-    Space.BackgroundTransparency = 1.000
-    Space.Position = UDim2.new(0, 98, 0, 3)
-    Space.Size = UDim2.new(0, 10, 0, 25)
-    Space.Font = Enum.Font.GothamBold
-    Space.Text = "|"
-    Space.TextColor3 = Color3.fromRGB(0,150,0)
-    Space.TextSize = 18.000
-    
-    ServerTime.Name = "ServerTime"
-    ServerTime.Parent = WindowFrame
-    ServerTime.BackgroundColor3 = _G.WindowBackgroundColor
-    ServerTime.BackgroundTransparency = 1.000
-    ServerTime.Position = UDim2.new(0, 115, 0, 3)
-    ServerTime.Size = UDim2.new(0, 225, 0, 25)
-    ServerTime.Font = Enum.Font.Code
-    ServerTime.Text = ""
-    ServerTime.TextSize = 13.000
-    ServerTime.TextColor3 = Color3.fromRGB(180,180,180)
-    ServerTime.TextXAlignment = Enum.TextXAlignment.Left
-    
-    Space2.Name = "Space2"
-    Space2.Parent = WindowFrame
-    Space2.BackgroundColor3 = _G.WindowBackgroundColor
-    Space2.BackgroundTransparency = 1.000
-    Space2.Position = UDim2.new(0, 276, 0, 3)
-    Space2.Size = UDim2.new(0, 10, 0, 25)
-    Space2.Font = Enum.Font.GothamBold
-    Space2.Text = "|"
-    Space2.TextColor3 = Color3.fromRGB(0,150,0)
-    Space2.TextSize = 18.000
-    
-    Pinged.Name = "Pinged"
-    Pinged.Parent = WindowFrame
-    Pinged.BackgroundColor3 = _G.WindowBackgroundColor
-    Pinged.BackgroundTransparency = 1.000
-    Pinged.Position = UDim2.new(0, 295, 0, 3)
-    Pinged.Size = UDim2.new(0, 225, 0, 25)
-    Pinged.Font = Enum.Font.Code
-    Pinged.Text = ""
-    Pinged.TextSize = 13.000
-    Pinged.TextColor3 = Color3.fromRGB(180,180,180)
-    Pinged.TextXAlignment = Enum.TextXAlignment.Left
     
     CloseButton.Name = "CloseButton"
     CloseButton.Parent = WindowFrame
@@ -300,17 +237,8 @@ function Blacklib:Window()
         closetog = not closetog
     end)
     
-    function osfunc:Refresh(textadd)
-        ServerTime.Text = textadd
-    end
     function titlefunc:Refresh(text)
         BlackTitle.Text = text
-    end
-    function pingfunc:Refresh(newtext)
-        Pinged.Text = newtext
-    end
-    function timefunc:Refresh(newtime)
-        PlayTime.Text = newtime
     end
     
     local function UpdateTime()
@@ -351,7 +279,7 @@ function Blacklib:Window()
     end)
     spawn(function()
         while task.wait() do
-            titlefunc:Refresh("") wait(.2) titlefunc:Refresh("E") wait(.2) titlefunc:Refresh("EG") wait(.2) titlefunc:Refresh("EGO") wait(.2) titlefunc:Refresh("EGO ") wait(.2) titlefunc:Refresh("EGO H") wait(.2) titlefunc:Refresh("EGO HU") wait(.2) titlefunc:Refresh("EGO HUB") wait(.2) titlefunc:Refresh("EGO HUB") wait(.2) titlefunc:Refresh("EGO HUB") wait(.9) titlefunc:Refresh("EGO HUB") wait(.2) titlefunc:Refresh("EGO HUB") wait(.2) titlefunc:Refresh("EGO HU") wait(.2) titlefunc:Refresh("EGO H") wait(.2) titlefunc:Refresh("EGO ") wait(.2) titlefunc:Refresh("EGO") wait(.2) titlefunc:Refresh("EG") wait(.2) titlefunc:Refresh("E") wait(.2) titlefunc:Refresh("") wait(.2) wait(.3)
+            titlefunc:Refresh("") wait(.2) titlefunc:Refresh("B") wait(.2) titlefunc:Refresh("Bl") wait(.2) titlefunc:Refresh("Bla") wait(.2) titlefunc:Refresh("Blac") wait(.2) titlefunc:Refresh("Black") wait(.2) titlefunc:Refresh("BlackT") wait(.2) titlefunc:Refresh("BlackTr") wait(.2) titlefunc:Refresh("BlackTra") wait(.2) titlefunc:Refresh("BlackTrap") wait(.9) titlefunc:Refresh("BlackTra") wait(.2) titlefunc:Refresh("BlackTr") wait(.2) titlefunc:Refresh("BlackT") wait(.2) titlefunc:Refresh("Black") wait(.2) titlefunc:Refresh("Blac") wait(.2) titlefunc:Refresh("Bla") wait(.2) titlefunc:Refresh("Bl") wait(.2) titlefunc:Refresh("B") wait(.2) titlefunc:Refresh("") wait(.2) wait(.3)
         end
     end)
     -- End Windows --
@@ -530,7 +458,7 @@ function Blacklib:Window()
         TabImage.BackgroundTransparency = 1.000
         TabImage.Position = UDim2.new(0, 3, 0, 4)
         TabImage.Size = UDim2.new(0, 20, 0, 20)
-        TabImage.Image = img or "rbxassetid://"
+        TabImage.Image = img or "rbxassetid://8666601749"
         TabImage.ImageColor3 = Color3.fromRGB(200,200,200)
         
         TabTitle.Name = tabtitle or "TabTitle"
