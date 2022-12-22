@@ -105,7 +105,7 @@ function Blacklib:Window()
     
     BlackImage.Name = "BlackImage"
     BlackImage.Parent = WindowFrame
-    BlackImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    BlackImage.BackgroundColor3 = Color3.fromRGB(255,102,102)
     BlackImage.BackgroundTransparency = 1.000
     BlackImage.Position = UDim2.new(0, 3, 0, 3)
     BlackImage.Size = UDim2.new(0, 25, 0, 25)
@@ -651,7 +651,7 @@ function Blacklib:Window()
             
             TextLabel.Name = seclabel or "TextLabel"
             TextLabel.Parent = sectionFrameHead
-            TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            TextLabel.BackgroundColor3 = Color3.fromRGB(255,102,102)
             TextLabel.BackgroundTransparency = 1.000
             TextLabel.Position = UDim2.new(0, 0, 0, 0)
             TextLabel.Size = UDim2.new(0, 387, 0, 25)
@@ -1343,7 +1343,7 @@ function Blacklib:Window()
                 Title_2.Size = UDim2.new(0, 18, 0, 18)
                 Title_2.Font = Enum.Font.GothamBold
                 Title_2.Text = tostring(start and math.floor((start / max) * (max - min) + min) or 0)
-                Title_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+                Title_2.TextColor3 = Color3.fromRGB(255,102,102)
                 Title_2.TextSize = 8.000
                 Title_2.TextXAlignment = Enum.TextXAlignment.Center
                 
