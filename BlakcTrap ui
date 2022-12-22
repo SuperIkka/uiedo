@@ -657,7 +657,7 @@ function Blacklib:Window()
             TextLabel.Size = UDim2.new(0, 387, 0, 25)
             TextLabel.Font = Enum.Font.Code
             TextLabel.Text = seclabel
-            TextLabel.TextColor3 = Color3.fromRGB(255,255,255)
+            TextLabel.TextColor3 = Color3.fromRGB(255,102,102)
             TextLabel.TextSize = 13.000
             TextLabel.TextXAlignment = Enum.TextXAlignment.Center
             
